@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:projectBD
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 10
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
+
+  application:
+    name: PROJECT
+  cloud:
+    eureka:
+      client:
+        register-with-eureka: true
+        fetch-registry: true
+        service-url:
+          defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+server:
+  port: 9092
+  connection-timeout: 30000
+  tomcat:
+    async-timeout: 60000
